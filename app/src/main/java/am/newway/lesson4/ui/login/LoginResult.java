@@ -1,6 +1,6 @@
 package am.newway.lesson4.ui.login;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Authentication result : success (user details) or error message.

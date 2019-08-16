@@ -3,8 +3,6 @@ package am.newway.lesson4.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -15,7 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import am.newway.lesson4.R;
+import am.newway.lesson4.data.variable.Var;
 import am.newway.lesson4.enums.TaskType;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity
 {
@@ -73,7 +74,7 @@ public class SecondActivity extends AppCompatActivity
 
     private void browsePicture()
     {
-        Intent intent = new Intent( Intent.ACTION_PICK,
+        Intent intent = new Intent( Intent.ACTION_PICK ,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI );
         startActivityForResult( intent,  BROWSEPICTURE);
     }
@@ -107,10 +108,10 @@ public class SecondActivity extends AppCompatActivity
         if (nType != null)
         {
             Bundle bnd = new Bundle();
-            bnd.putString( "name" , strName );
-            bnd.putString( "desc" , strDescription );
-            bnd.putString( "type" , nType.toString() );
-            bnd.putString( "uri" , uriPicture.toString() );
+            bnd.putString( Var._Name , strName );
+            bnd.putString( Var._Description , strDescription );
+            bnd.putString( Var._Type , nType.toString() );
+            bnd.putString( Var._Uri , uriPicture.toString() );
 
             Intent i = new Intent(  );
             i.putExtras(  bnd );

@@ -2,11 +2,63 @@
 
 	<!-- Base application theme. -->
 	<style name = "AppTheme"
-		   parent = "Theme.AppCompat">
+		   parent = "Theme.MaterialComponents.NoActionBar">
 		<!-- Customize your theme here. -->
 		<item name = "colorPrimary">@color/colorPrimary</item>
 		<item name = "colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name = "colorAccent">@color/colorAccent</item>
+		<item name="shapeAppearanceSmallComponent">@style/Widget.MyApp.SmallShapeAppearance</item>
+		<item name="shapeAppearanceMediumComponent">@style/Widget.MyApp.MediumShapeAppearance</item>
+		<item name="shapeAppearanceLargeComponent">@style/Widget.MyApp.LargeShapeAppearance</item>
+		<item name="materialCardViewStyle">@style/Widget.MyApp.MaterialCardView</item>
+		<item name = "buttonStyleSmall">@style/Widget.MyApp.SmallShapeAppearance</item>
+		<item name = "editTextStyle">@style/Widget.MyApp.SmallShapeAppearance</item>
 	</style>
 
-</resources>
+	<style name="Widget.MyApp.MaterialCardView"
+		   parent="">
+		<item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.MaterialCardView</item>
+	</style>
+
+	<style name="ShapeAppearanceOverlay.MyApp.MaterialCardView" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">16dp</item>
+	</style>
+
+	<style name="ShapeAppearanceOverlay.MyApp.MaterialCardView.Rounded" parent="">
+		<item name="cornerFamily">rounded</item>
+	</style>
+
+	<style name = "Widget.MyApp.SmallShapeAppearance"
+		   parent= "ShapeAppearance.MaterialComponents.SmallComponent">
+		<item name="cornerFamilyTopLeft">rounded</item>
+		<item name="cornerFamilyBottomRight">cut</item>
+		<item name="cornerSizeTopLeft">20dp</item>
+		<item name="cornerSizeBottomRight">15dp</item>
+		<!--<item name="cornerFamily">cut</item>-->
+		<!--<item name="cornerSize">8dp</item>-->
+	</style>
+	<style name = "Widget.MyApp.MediumShapeAppearance"
+		   parent= "ShapeAppearance.MaterialComponents.MediumComponent">
+		<item name="cornerFamilyTopLeft">rounded</item>
+		<item name="cornerFamilyBottomRight">cut</item>
+		<item name="cornerSizeTopLeft">15dp</item>
+		<item name="cornerSizeBottomRight">7dp</item>
+		<!--<item name="cornerFamily">cut</item>-->
+		<!--<item name="cornerSize">8dp</item>-->
+	</style>
+	<style name = "Widget.MyApp.LargeShapeAppearance"
+		   parent= "ShapeAppearance.MaterialComponents.LargeComponent">
+		<item name="cornerFamilyTopLeft">rounded</item>
+		<item name="cornerFamilyBottomRight">cut</item>
+		<item name="cornerSizeTopLeft">15dp</item>
+		<item name="cornerSizeBottomRight">7dp</item>
+		<!--<item name="cornerFamily">cut</item>-->
+		<!--<item name="cornerSize">8dp</item>-->
+	</style>
+
+	<style name = "Widget.MyApp.Button"
+		   parent= "Widget.MyApp.SmallShapeAppearance">
+		<item name="android:background">@color/colorAccent</item>
+	</style>
+	</resources>

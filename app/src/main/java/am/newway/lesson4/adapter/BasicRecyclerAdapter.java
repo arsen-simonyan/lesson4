@@ -1,23 +1,22 @@
 package am.newway.lesson4.adapter;
 
+import am.newway.lesson4.R;
+import am.newway.lesson4.data.Tasks;
+import am.newway.lesson4.enums.TaskType;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
-import am.newway.lesson4.R;
-import am.newway.lesson4.data.Tasks;
-import am.newway.lesson4.enums.TaskType;
 
 public class BasicRecyclerAdapter extends RecyclerView.Adapter<BasicRecyclerAdapter.MyViewHolder>
 {
@@ -80,10 +79,14 @@ public class BasicRecyclerAdapter extends RecyclerView.Adapter<BasicRecyclerAdap
         {
             textName.setText( task.getStrName() );
             textDescription.setText( task.getStrDescription() );
-            //imageView.setImageURI( task.getUriImage() );
-            Glide.with( context )
-                    .load( task.getUriImage() )
-                    .into( imageView );
+            Uri uri = task.getUriImage();
+
+            Glide.with(context).load(uri).into(imageView);
+            //if(uri  != null)
+             //   imageView.setImageURI( uri );
+//            Glide.with( context )
+//                    .load( task.getUriImage() )
+//                    .into( imageView );
 
             switch ( TaskType.valueOf( task.getStrType() ) )
             {

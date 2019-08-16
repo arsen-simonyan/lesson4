@@ -1,11 +1,10 @@
 package am.newway.lesson4.ui.login;
 
-import android.arch.lifecycle.ViewModel;
-import android.arch.lifecycle.ViewModelProvider;
-import android.support.annotation.NonNull;
-
 import am.newway.lesson4.data.LoginDataSource;
 import am.newway.lesson4.data.LoginRepository;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

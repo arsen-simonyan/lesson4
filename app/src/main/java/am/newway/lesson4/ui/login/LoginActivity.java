@@ -1,13 +1,8 @@
 package am.newway.lesson4.ui.login;
 
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -16,12 +11,16 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import am.newway.lesson4.ui.MainActivity;
 import am.newway.lesson4.R;
+import am.newway.lesson4.ui.MainActivity;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -39,7 +38,6 @@ public class LoginActivity extends AppCompatActivity
         final EditText usernameEditText = findViewById( R.id.username );
         final EditText passwordEditText = findViewById( R.id.password );
         final Button loginButton = findViewById( R.id.login );
-        final ProgressBar loadingProgressBar = findViewById( R.id.loading );
 
         loginViewModel.getLoginFormState().observe( this , new Observer<LoginFormState>()
         {
@@ -71,7 +69,6 @@ public class LoginActivity extends AppCompatActivity
                 {
                     return;
                 }
-                loadingProgressBar.setVisibility( View.GONE );
                 if (loginResult.getError() != null)
                 {
                     showLoginFailed( loginResult.getError() );
@@ -109,6 +106,10 @@ public class LoginActivity extends AppCompatActivity
                         passwordEditText.getText().toString() );
             }
         };
+        usernameEditText.setText( "test@aca.com");
+        passwordEditText.setText( "123456" );
+
+
         usernameEditText.addTextChangedListener( afterTextChangedListener );
         passwordEditText.addTextChangedListener( afterTextChangedListener );
         passwordEditText.setTransformationMethod(new PasswordTransformationMethod());
@@ -132,7 +133,6 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick( View v )
             {
-                loadingProgressBar.setVisibility( View.VISIBLE );
                 loginViewModel.login( usernameEditText.getText().toString() ,
                         passwordEditText.getText().toString() );
             }

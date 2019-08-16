@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name = "colorPrimary">#008577</color>
-	<color name = "colorPrimaryDark">#00574B</color>
-	<color name = "colorAccent">#D81B60</color>
+	<color name = "colorPrimary">#304049</color>
+	<color name = "colorPrimaryDark">#17262A</color>
+	<color name = "colorAccent">#FAAB1A</color>
 
-	<color name = "myRed">#DB8982</color>
-	<color name = "myGreen">#9DE794</color>
-	<color name = "myBlue">#5D75CC</color>
+	<color name = "myRed">#E24032</color>
+	<color name = "myGreen">#8BC34A</color>
+	<color name = "myBlue">#2196F3</color>
 </resources>

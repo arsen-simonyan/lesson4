@@ -1,14 +1,14 @@
 package am.newway.lesson4.ui.login;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 import android.util.Patterns;
 
+import am.newway.lesson4.R;
 import am.newway.lesson4.data.LoginRepository;
 import am.newway.lesson4.data.Result;
 import am.newway.lesson4.data.model.LoggedInUser;
-import am.newway.lesson4.R;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 public class LoginViewModel extends ViewModel
 {
